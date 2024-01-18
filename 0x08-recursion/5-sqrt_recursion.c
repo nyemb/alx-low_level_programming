@@ -1,47 +1,32 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
-* squareroot - finds natural square root
-* @num: number to root
-* @result: begin search from 1
-* Return: square root
-*/
+ * sqrt_a - main - check the code
+ * @a: number
+ * @b: number of power
+ * Return: Always 0.
+ */
 
-int squareroot(int num, int result)
+int sqrt_a(int a, int b)
 {
-if (result > num / 2)
-{
-return (-1);
+	if (b * b == a)
+	{
+		return (b);
+	}
+	else if (b * b > a)
+	{
+		return (-1);
+	}
+	return (sqrt_a(a, b + 1));
 }
-else if (result * result == num)
-{
-return (result);
-}
-else
-{
-return (squareroot(num, result + 1));
-}
-}
-
 
 /**
-* _sqrt_recursion - returns the natural square root
-* @n: number to root
-* Return: type int
-*/
-
+ * _sqrt_recursion - main - check the code
+ * @n: number
+ *
+ * Return: Always 0.
+ */
 int _sqrt_recursion(int n)
 {
-if (n < 0)
-{
-return (-1);
-}
-else if (n < 2)
-{
-return (1);
-}
-else
-{
-return (squareroot(n, 1));
-}
+	return (sqrt_a(n, 0));
 }

@@ -1,47 +1,33 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
-* checkprime - ckeck if divisor exists
-* @value: divisor to be checked
-* @num: number to be checked
-* Return: 1 for prime 0 not prime
-*/
+ * prime_a - main - check the code
+ * @a: number
+ * @b: number of power
+ * Return: Always 0.
+ */
 
+int prime_a(int a, int b)
+{
+	if (a <= 1 || (a != b && a % b == 0))
+	{
+		return (0);
+	}
+		else if (a == b)
+	{
+		return (1);
+	}
+	return (prime_a(a, b + 1));
+}
 
-int checkprime(int num, int value)
-{
-if (num < value)
-{
-return (0);
-}
-else if ((num % value) == 0)
-{
-return (1 + checkprime(num, value + 1));
-}
-else
-{
-return (0 + checkprime(num, value + 1));
-}
-}
 
 /**
-* is_prime_number - check if prime number
-* @n: number to be checked
-* Return: 1 for prime 0 not prime
-*/
-
+ * is_prime_number - main - check the code
+ * @n: number
+ *
+ * Return: Always 0.
+ */
 int is_prime_number(int n)
 {
-if (n < 2)
-{
-return (0);
-}
-else if (checkprime(n, 1) == 2)
-{
-return (1);
-}
-else
-{
-return (0);
-}
+	return (prime_a(n, 2));
 }
