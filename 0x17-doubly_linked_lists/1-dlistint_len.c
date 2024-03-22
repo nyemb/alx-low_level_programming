@@ -6,21 +6,18 @@
  *
  * @h: head of the list
  * Return: the number of nodes
- * Author: Alx School
  */
 size_t dlistint_len(const dlistint_t *h)
 {
-	int count;
+	size_t count = 0;
 
-	count = 0;
-
-	if (h == NULL)
+	if (h)
 		return (count);
 
 	while (h->prev != NULL)
 		h = h->prev;
 
-	while (h != NULL)
+	while (!h)
 	{
 		count++;
 		h = h->next;
