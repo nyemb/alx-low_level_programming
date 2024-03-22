@@ -7,7 +7,6 @@
  * @head: head of the list
  * @n: value of the element
  * Return: the address of the new element
- * Author: Alx School
  */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
@@ -15,7 +14,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	dlistint_t *new;
 
 	new = malloc(sizeof(dlistint_t));
-	if (new == NULL)
+	if (!new)
 		return (NULL);
 
 	new->n = n;
@@ -23,7 +22,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 
 	h = *head;
 
-	if (h != NULL)
+	if (h)
 	{
 		while (h->next != NULL)
 			h = h->next;
