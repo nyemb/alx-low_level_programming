@@ -5,13 +5,12 @@
  *
  * @head: head of the list
  * Return: no return
- * Author: Alx School
  */
 void free_dlistint(dlistint_t *head)
 {
 	dlistint_t *tmp;
 
-	if (head != NULL)
+	if (head)
 		while (head->prev != NULL)
 			head = head->prev;
 
