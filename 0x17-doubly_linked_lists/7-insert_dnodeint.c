@@ -8,7 +8,6 @@
  * @idx: index of the new node
  * @n: value of the new node
  * Return: the address of the new node, or NULL if it failed
- * Author: Alx School
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
@@ -23,10 +22,10 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		head = *h;
 		i = 1;
-		if (head != NULL)
+		if (head)
 			while (head->prev != NULL)
 				head = head->prev;
-		while (head != NULL)
+		while (head)
 		{
 			if (i == idx)
 			{
@@ -35,7 +34,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 				else
 				{
 					new = malloc(sizeof(dlistint_t));
-					if (new != NULL)
+					if (new)
 					{
 						new->n = n;
 						new->next = head->next;

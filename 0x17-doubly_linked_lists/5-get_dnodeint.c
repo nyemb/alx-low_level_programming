@@ -7,13 +7,12 @@
  * @head: head of the list
  * @index: index of the nth node
  * Return: nth node
- * Author: Alx School
  */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 	unsigned int i;
 
-	if (head == NULL)
+	if (!head)
 		return (NULL);
 
 	while (head->prev != NULL)
@@ -21,7 +20,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 
 	i = 0;
 
-	while (head != NULL)
+	while (head)
 	{
 		if (i == index)
 			break;
